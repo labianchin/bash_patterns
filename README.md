@@ -8,6 +8,7 @@ Check these links:
 - https://kvz.io/blog/2013/11/21/bash-best-practices/
 - http://www.kfirlavi.com/blog/2012/11/14/defensive-bash-programming/
 - http://wiki.bash-hackers.org/scripting/obsolete
+- https://google.github.io/styleguide/shell.xml
 
 
 ### Examples
