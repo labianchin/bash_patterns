@@ -59,6 +59,10 @@ is_linux() {
     [[ $('uname') == 'Linux' ]]
 }
 
+if ! hash something 2>/dev/null; then
+    echo "'something' was not found"
+fi
+
 # list symlinks
 find "$HOME" -maxdepth 2 -type l -exec ls -lah --color {} + 2>/dev/null | sed -e 's/.* \(.* -> .*\)/\1/'
 
