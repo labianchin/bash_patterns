@@ -59,6 +59,13 @@ is_linux() {
     [[ $('uname') == 'Linux' ]]
 }
 
+adddate() {
+  # adds data to output: e.g. somecommand | adddate
+  while IFS= read -r line; do
+    echo "$(date +"[%F %T]") $line"
+  done
+}
+
 if ! hash something 2>/dev/null; then
     echo "'something' was not found"
 fi
