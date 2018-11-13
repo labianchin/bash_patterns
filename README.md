@@ -98,5 +98,7 @@ foo"bar"''
 EOF
 )
 
+# for each argument run command, in parallel
+printf '%s\n' "$@" | xargs -I{} -P4 -t echo foo {} bar
 
 ```
