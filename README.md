@@ -101,4 +101,17 @@ EOF
 # for each argument run command, in parallel
 printf '%s\n' "$@" | xargs -I{} -P4 -t echo foo {} bar
 
+
+# UTF-8 emojis at https://apps.timwhitlock.info/emoji/tables/unicode or https://unicode.org/emoji/charts/full-emoji-list.html
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+cleanup_exit() {
+  rv=$?
+  echo -e "\\U274C${RED} Failed!${NC}"
+  exit $rv
+}
+
+trap "cleanup_exit" SIGQUIT SIGTERM EXIT
 ```
