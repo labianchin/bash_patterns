@@ -109,9 +109,22 @@ NC='\033[0m' # No Color
 
 cleanup_exit() {
   rv=$?
-  echo -e "\\U274C${RED} Failed!${NC}"
-  exit $rv
+  # do some handling
+  if [[ $rv != 0 ]]; then
+    # echo with colors and emojis to stderr
+    >&2 echo -e "\\U1F6A8\\U1F6A8\\U1F6A8\\U1F6A8\\U1F6A8 \\U274C${RED} Failed! \\U1F446 ${NC}\\U1F6A8\\U1F6A8\\U1F6A8\\U1F6A8\\U1F6A8"
+    exit $rv
+  else
+    >&2 echo -e "\\U2705${GREEN} Completed successfully!${NC}"
+  fi
 }
 
 trap "cleanup_exit" SIGQUIT SIGTERM EXIT
+
+# create base dir if not exists
+mkdir -p "$(dirname "$someFilePath")"
+
+# check if variable is defined and non empty
+[[ -n "${POSIBLY_EMPTY_VARIABLE:-}" ]]
+
 ```
