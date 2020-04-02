@@ -9,6 +9,7 @@ Check these links:
 - http://www.kfirlavi.com/blog/2012/11/14/defensive-bash-programming/
 - http://wiki.bash-hackers.org/scripting/obsolete
 - https://google.github.io/styleguide/shell.xml
+- https://github.com/SimonBaeumer/bash-tricks
 
 
 ### Examples
